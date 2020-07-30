@@ -13,4 +13,5 @@ CombineDataSources provides custom Combine subscribers that act as table and col
   s.source_files  = 'Sources/**/*.swift'
   s.framework     = ['Combine']
   s.swift_version = '5.0'
+  s.dependency 'CombineCocoa'
 end
