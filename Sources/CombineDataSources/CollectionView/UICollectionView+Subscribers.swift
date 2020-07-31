@@ -89,12 +89,12 @@ extension UICollectionView {
   open  func modelSelected<type>(_ modelType: type.Type) -> AnyPublisher<type, Never> {
     let datasourcable = self.dataSource as! Datasourcable
 
-   let k =  self
+   let publisher =  self
       .didSelectItemPublisher
       .map{datasourcable.itmes(for: $0)}
       .compactMap{$0 as? type}
       .eraseToAnyPublisher()
-    return k
+    return publisher
 
   }
 
